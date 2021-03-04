@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var dataStorage = BitData()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            
+            Image("bit").resizable().aspectRatio(contentMode: .fit).padding()
+            Text(dataStorage.btcPrice).font(.largeTitle)
+        }
     }
 }
 
@@ -19,3 +25,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
